@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://xeo8wg6hag0y"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_obskk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vpnok"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hfpjw"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xd5h6"]
+albedo_color = Color(0.466667, 0.462745, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6vnpt"]
+material = SubResource("StandardMaterial3D_xd5h6")
+size = Vector3(0.5, 0.5, 1)
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_obskk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_vpnok")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_hfpjw")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="FrontStick" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384789, -1)
+mesh = SubResource("BoxMesh_6vnpt")
