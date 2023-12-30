@@ -22,7 +22,6 @@ func _unhandled_input(event):
 			rot_y = 0.8
 		if rot_y < -0.8:
 			rot_y = -0.8
-		print_debug(rot_y)
 		transform.basis = Basis() # reset rotation
 		rotate_object_local(Vector3(0, 1, 0), rot_x) # first rotate in Y
 		rotate_object_local(Vector3(1, 0, 0), rot_y) # then rotate in X
