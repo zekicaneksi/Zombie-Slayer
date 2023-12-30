@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://v8p184ailusf"]
+
+[ext_resource type="Script" path="res://zombie.gd" id="1_4j01v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fsgwm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jwsdn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxww6"]
+albedo_color = Color(1, 1, 0.160784, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ix1uj"]
+material = SubResource("StandardMaterial3D_vxww6")
+size = Vector3(0.25, 0.25, 0.5)
+
+[node name="Zombie" type="CharacterBody3D" groups=["zombies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 5
+collision_mask = 2
+script = ExtResource("1_4j01v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_fsgwm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_jwsdn")
+
+[node name="FrontStick" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.75)
+mesh = SubResource("BoxMesh_ix1uj")
