@@ -19,8 +19,7 @@ func initialize(start_position, player_position):
 	look_at_from_position(start_position, player_position, Vector3.UP)
 	
 func chase_player(player_position):
-	look_at_from_position(position, player_position, Vector3.UP)
-	
+	look_at(player_position, Vector3.UP)
 	# We calculate a forward velocity that represents the speed.
 	velocity = Vector3.FORWARD * speed
 	# We then rotate the velocity vector based on the mob's Y rotation
