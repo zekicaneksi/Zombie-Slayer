@@ -1,5 +1,6 @@
 extends Node
 
+var mob_scene = preload("res://zombie.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +15,6 @@ func _process(delta):
 
 func _on_mob_spawn_timer_timeout():
 	# Create a new instance of the Mob scene.
-	var mob_scene = preload("res://zombie.tscn")
 	var mob = mob_scene.instantiate()
 
 	# Choose a random location on the SpawnPath.

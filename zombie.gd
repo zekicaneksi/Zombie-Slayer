@@ -25,3 +25,6 @@ func chase_player(player_position):
 	# We then rotate the velocity vector based on the mob's Y rotation
 	# in order to move in the direction the mob is looking.
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
+
+func hit():
+	queue_free()

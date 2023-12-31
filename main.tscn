@@ -1,16 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxb0gstbjrcfv"]
+[gd_scene load_steps=7 format=3 uid="uid://bxb0gstbjrcfv"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_g48c2"]
 [ext_resource type="PackedScene" uid="uid://xeo8wg6hag0y" path="res://player.tscn" id="1_vqrgj"]
 [ext_resource type="PackedScene" uid="uid://eoo8l5hwk2wn" path="res://wall.tscn" id="3_nhkbv"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wa1i7"]
-albedo_color = Color(1, 0.360784, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_0eovb"]
-material = SubResource("StandardMaterial3D_wa1i7")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_obeo3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x5378"]
 size = Vector3(30, 2, 30)
@@ -32,16 +24,6 @@ script = ExtResource("1_g48c2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 3
 collision_mask = 2
-
-[node name="SmtToLookAt" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.6469)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SmtToLookAt"]
-mesh = SubResource("BoxMesh_0eovb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SmtToLookAt"]
-shape = SubResource("BoxShape3D_obeo3")
 
 [node name="Walls" type="Node" parent="."]
 
