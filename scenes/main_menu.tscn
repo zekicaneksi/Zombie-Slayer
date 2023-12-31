@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwi4c38mqxur8"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_qf3in"]
+[ext_resource type="Texture2D" uid="uid://bj580ohvy5ve2" path="res://assets/image/main_menu_background.jpg" id="2_ui5ea"]
+
+[sub_resource type="Theme" id="Theme_vegcw"]
+default_font_size = 50
+Label/colors/font_color = Color(0.458824, 0.184314, 0.0862745, 1)
+Label/font_sizes/font_size = 80
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vegcw")
+script = ExtResource("1_qf3in")
+
+[node name="BackgroundColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.682353)
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -9.0
+offset_right = 111.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -143.0
+offset_right = 92.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Quit"
+
+[node name="GameNameLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -273.0
+offset_top = 180.0
+offset_right = 273.0
+offset_bottom = 290.0
+grow_horizontal = 2
+text = "Zombie Slayer"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_ui5ea")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
