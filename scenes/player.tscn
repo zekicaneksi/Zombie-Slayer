@@ -25,4 +25,4 @@ mesh = SubResource("BoxMesh_hfpjw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Gun" parent="." instance=ExtResource("2_as2er")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.257438, 0.741671, -0.77)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.257438, 0.741671, -0.688596)

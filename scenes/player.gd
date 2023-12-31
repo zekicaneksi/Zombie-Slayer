@@ -8,7 +8,7 @@ const JUMP_VELOCITY = 3.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var bulletScene = preload("res://scenes/bullet.tscn")
-@onready var gun_anim = $Gun/AnimationPlayer
+@onready var gun_anim = $Gun/Model/AnimationPlayer
 
 # accumulators for camera
 var rot_x = 0
@@ -51,7 +51,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_pressed("shoot"):
 		if !gun_anim.is_playing():
-			gun_anim.play("shoot")
+			gun_anim.play("Animation")
 			var bullet_instance = bulletScene.instantiate()
 			bullet_instance.position = $Gun/Marker3D.global_position
 			bullet_instance.transform.basis = $Gun/Marker3D.global_transform.basis
